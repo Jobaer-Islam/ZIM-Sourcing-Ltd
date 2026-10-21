@@ -1,260 +1,98 @@
-import React from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink, ShieldCheck, Send, Plane } from 'lucide-react';
-import { COMPANY } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Contact ZIM Sourcing Ltd | Dhaka Buying House Office',
-  description:
-    'Contact ZIM Sourcing Ltd in Pallabi, Mirpur, Dhaka. Direct phone: +880 1632 697791. Emails: info@zimsourcing.com, contact@zimsourcing.com. Schedule buyer factory visits.',
+  title: 'Contact ZIM Sourcing Ltd | Dhaka Garments Buying House',
+  description: 'Contact ZIM Sourcing in Dhaka, Bangladesh by email, phone, WhatsApp or visit our Mirpur office. Buyer factory visits arranged on request.',
 };
 
-export default function ContactPage() {
+export default function Page() {
   return (
-    <div style={{ padding: '3.5rem 0 5rem 0' }}>
-      <div className="wrap">
-        {/* Page Head */}
-        <div style={{ maxWidth: '820px', marginBottom: '3.5rem' }}>
-          <span className="eyebrow">Direct Communication</span>
-          <h1 className="h1 display" style={{ marginBottom: '1.25rem' }}>
-            Get in Touch with Our Dhaka Merchandising Office
-          </h1>
-          <p className="lead muted">
-            Whether you have an immediate RFQ, want to discuss yarn availability for an upcoming season, or are planning a buyer visit to Dhaka, our team is ready to assist.
-          </p>
-        </div>
+    <>
+      <main id="main">
+<section className="pagehead">
+  <div className="wrap">
+    <ol className="crumbs"><li><a href="/">Home</a></li><li><span aria-current="page">Contact</span></li></ol>
+    <p className="eyebrow">Contact us</p>
+    <h1 className="h1 display">Talk to our Dhaka sourcing team.</h1>
+    <p className="lead">Email is the best way to reach us: it keeps your specifications, drawings and approvals in one thread we can work from. For product pricing, please use the quotation form so we have what we need to cost your programme.</p>
+    <div className="cluster mt-4">
+      <a className="btn btn-lg" href="/quote">Request a Quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a className="btn btn-ghost btn-lg" href="mailto:info@zimsourcing.com"><svg aria-hidden="true"><use href="#i-mail"/></svg> Email us</a>
+    </div>
+  </div>
+</section>
 
-        {/* Contact Info Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.75rem',
-            marginBottom: '4rem',
-          }}
-        >
-          {/* Email Card */}
-          <div
-            className="card"
-            style={{
-              background: 'var(--panel-bg)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius)',
-              padding: '2rem',
-            }}
-          >
-            <div
-              style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '10px',
-                background: 'rgba(13, 148, 136, 0.12)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--teal)',
-                marginBottom: '1.25rem',
-              }}
-            >
-              <Mail className="w-6 h-6" />
-            </div>
-            <h2 className="h4" style={{ marginBottom: '0.5rem' }}>Email Enquiries</h2>
-            <p className="small muted" style={{ marginBottom: '1rem' }}>
-              For tech packs, costing sheets, and formal commercial requests:
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-              <a
-                href={`mailto:${COMPANY.email}`}
-                style={{ color: 'var(--teal)', fontWeight: 600, fontSize: '1rem' }}
-              >
-                {COMPANY.email}
-              </a>
-              <a
-                href={`mailto:${COMPANY.contactEmail}`}
-                style={{ color: 'var(--teal)', fontWeight: 600, fontSize: '1rem' }}
-              >
-                {COMPANY.contactEmail}
-              </a>
-            </div>
-          </div>
-
-          {/* Phone & WhatsApp Card */}
-          <div
-            className="card"
-            style={{
-              background: 'var(--panel-bg)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius)',
-              padding: '2rem',
-            }}
-          >
-            <div
-              style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '10px',
-                background: 'rgba(13, 148, 136, 0.12)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--teal)',
-                marginBottom: '1.25rem',
-              }}
-            >
-              <Phone className="w-6 h-6" />
-            </div>
-            <h2 className="h4" style={{ marginBottom: '0.5rem' }}>Phone &amp; WhatsApp</h2>
-            <p className="small muted" style={{ marginBottom: '1rem' }}>
-              Direct desk telephone and instant mobile chat:
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <a
-                href={`tel:${COMPANY.phone.replace(/\s+/g, '')}`}
-                style={{ color: 'var(--fg)', fontWeight: 700, fontSize: '1.1rem' }}
-              >
-                {COMPANY.phone}
-              </a>
-              <a
-                href={`https://wa.me/${COMPANY.whatsapp.replace(/[^0-9]/g, '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  color: 'var(--teal)',
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
-                }}
-              >
-                <MessageCircle className="w-4 h-4" /> Message on WhatsApp
-              </a>
-            </div>
-          </div>
-
-          {/* Office Address Card */}
-          <div
-            className="card"
-            style={{
-              background: 'var(--panel-bg)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius)',
-              padding: '2rem',
-            }}
-          >
-            <div
-              style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '10px',
-                background: 'rgba(13, 148, 136, 0.12)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--teal)',
-                marginBottom: '1.25rem',
-              }}
-            >
-              <MapPin className="w-6 h-6" />
-            </div>
-            <h2 className="h4" style={{ marginBottom: '0.5rem' }}>Dhaka Buying House</h2>
-            <address style={{ fontStyle: 'normal', color: 'var(--muted)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '0.75rem' }}>
-              {COMPANY.name}
-              <br />
-              {COMPANY.address.street}
-              <br />
-              {COMPANY.address.city} {COMPANY.address.postalCode}, Bangladesh
-            </address>
-            <span className="small muted" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Clock className="w-3.5 h-3.5" /> Mon–Sat: 10:00 – 18:00 (UTC+6)
-            </span>
-          </div>
-        </div>
-
-        {/* Visiting Dhaka Section */}
-        <div
-          className="card"
-          style={{
-            background: 'var(--panel-alt-bg)',
-            border: '1px solid var(--border)',
-            borderRadius: 'var(--radius-lg, 24px)',
-            padding: '3rem',
-            marginBottom: '4rem',
-          }}
-        >
-          <div className="split" style={{ alignItems: 'center', gap: '3rem' }}>
-            <div>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '4px 12px',
-                  borderRadius: '100px',
-                  background: 'rgba(13, 148, 136, 0.12)',
-                  color: 'var(--teal)',
-                  fontSize: '0.85rem',
-                  fontWeight: 600,
-                  marginBottom: '1rem',
-                }}
-              >
-                <Plane className="w-4 h-4" />
-                <span>Buyer Concierge Service</span>
-              </div>
-              <h2 className="h2 display" style={{ marginBottom: '1rem' }}>
-                Planning a Sourcing Trip to Bangladesh?
-              </h2>
-              <p className="muted" style={{ lineHeight: 1.6, marginBottom: '1.25rem' }}>
-                We frequently host international buying teams, apparel brand founders, and quality directors visiting Dhaka. We provide full protocol assistance: Hazrat Shahjalal International Airport (DAC) pickup, premium hotel corporate bookings in Gulshan/Banani, curated factory floor visits, and dedicated air-conditioned transport.
-              </p>
-              <a
-                className="btn"
-                href={`mailto:${COMPANY.contactEmail}?subject=Buyer%20Trip%20to%20Dhaka`}
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-              >
-                Coordinate Your Visit Itinerary <Send className="w-4 h-4" />
-              </a>
-            </div>
-
-            <div
-              style={{
-                background: 'var(--panel-bg)',
-                border: '1px solid var(--border)',
-                borderRadius: 'var(--radius)',
-                padding: '1.75rem',
-              }}
-            >
-              <h3 className="h4" style={{ marginBottom: '1rem' }}>Key Travel Details</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem' }}>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                  <ShieldCheck className="w-4 h-4" style={{ color: 'var(--teal)', marginTop: '2px', flexShrink: 0 }} />
-                  <span><strong>Airport (DAC):</strong> 30–45 mins drive to our Pallabi office.</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                  <ShieldCheck className="w-4 h-4" style={{ color: 'var(--teal)', marginTop: '2px', flexShrink: 0 }} />
-                  <span><strong>Recommended Hotels:</strong> The Westin Dhaka, Radisson Blu Water Garden, Renaissance Gulshan.</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                  <ShieldCheck className="w-4 h-4" style={{ color: 'var(--teal)', marginTop: '2px', flexShrink: 0 }} />
-                  <span><strong>Showroom:</strong> Complete archive of seasonal knit, woven, sweater, and denim hangers ready for review.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Action Prompt */}
-        <div style={{ textAlign: 'center' }}>
-          <span className="eyebrow">Have Specific Styles to Price?</span>
-          <h2 className="h2 display" style={{ marginBottom: '1.25rem' }}>
-            Submit an RFQ through our quotation wizard
-          </h2>
-          <Link className="btn btn-lg" href="/quote">
-            Open Quotation Form
-          </Link>
-        </div>
+<section className="section-tight">
+  <div className="wrap">
+    <div className="grid g-3">
+      <div className="card contact-card">
+        <span className="card-icon"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+        <h2 className="h4">General enquiries</h2>
+        <p className="contact-value"><a href="mailto:info@zimsourcing.com">info@zimsourcing.com</a></p>
+        <button className="copy-btn" type="button" data-copy="info@zimsourcing.com">
+          <svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span>
+        </button>
+      </div>
+      <div className="card contact-card">
+        <span className="card-icon"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+        <h2 className="h4">New business</h2>
+        <p className="contact-value"><a href="mailto:contact@zimsourcing.com">contact@zimsourcing.com</a></p>
+        <button className="copy-btn" type="button" data-copy="contact@zimsourcing.com">
+          <svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span>
+        </button>
+      </div>
+      <a className="card card-hover contact-card" href="https://wa.me/8801632697791" target="_blank" rel="noopener">
+        <span className="card-icon"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+        <h2 className="h4">WhatsApp</h2>
+        <p className="contact-value">Open a chat with the Dhaka office</p>
+        <span className="small muted">Useful for quick questions. Anything with files or specifications is better by email.</span>
+      </a>
+      <div className="card contact-card">
+        <span className="card-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
+        <h2 className="h4">Head office</h2>
+        <p className="contact-value">Pallabi, Mirpur<br />Dhaka 1216, Bangladesh</p>
+        <span className="small muted">Visits by appointment. <a href="/about#visiting">Planning a trip?</a></span>
+      </div>
+      <div className="card contact-card">
+        <span className="card-icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
+        <h2 className="h4">BGBA member</h2>
+        <p className="contact-value">Bangladesh Garment Buying House Association</p>
+        <span className="small muted">The apex trade body for buying houses, approved by the Ministry of Commerce</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section className="section" aria-labelledby="hours-h">
+  <div className="wrap">
+    <div className="section-head center">
+      <p className="eyebrow">Office hours</p>
+      <h2 className="h2 display" id="hours-h">When we are at our desks, in your time.</h2>
+      <p className="lead mt-2">We are open Monday to Saturday, 10 am to 6 pm in Dhaka, with Sunday by appointment. The panel below converts that to the clock on your own device, so there is nothing to work out.</p>
+    </div>
+
+    <div className="tz reveal" data-tz>
+      <div className="tz-face">
+        <p className="tz-label">Dhaka office</p>
+        <p className="tz-time" data-tz-dhaka>&ndash;&ndash;:&ndash;&ndash;</p>
+        <p className="tz-zone">Bangladesh Standard Time, GMT+6</p>
+      </div>
+      <div className="tz-face">
+        <p className="tz-label">Your device <span className="tz-name" data-tz-name></span></p>
+        <p className="tz-time" data-tz-local>&ndash;&ndash;:&ndash;&ndash;</p>
+        <p className="tz-zone" data-tz-offset></p>
+      </div>
+      <div className="tz-state">
+        <span className="clock-dot" data-tz-dot></span>
+        <span data-tz-status>Checking the time in Dhaka</span>
+      </div>
+      <p className="tz-window" data-tz-window>Our 10 am to 6 pm in Dhaka falls at these hours where you are.</p>
+    </div>
+    <p className="table-note center">Urgent messages sent by WhatsApp are seen outside office hours. Sunday calls and visits can be arranged on request.</p>
+  </div>
+</section>
+
+</main>
+    </>
   );
 }

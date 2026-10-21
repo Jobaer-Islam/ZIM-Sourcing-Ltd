@@ -1,190 +1,89 @@
-import React from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowLeft, Clock, Calendar, CheckCircle2, AlertTriangle, ArrowRight, Send } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'What Belongs in a Garment Tech Pack | ZIM Sourcing Ltd Guide',
-  description:
-    'A practical, step-by-step breakdown of what belongs in an apparel tech pack: technical sketches, measurement charts, BOM, and construction notes.',
+  title: 'What Belongs in a Garment Tech Pack | ZIM Sourcing',
+  description: 'The sections every garment tech pack needs: technical sketch, measurement chart, bill of materials, construction notes and packing specifications.',
 };
 
-export default function TechPackGuidePage() {
+export default function Page() {
   return (
-    <div style={{ padding: '3.5rem 0 5rem 0' }}>
-      <div className="wrap" style={{ maxWidth: '820px', margin: '0 auto' }}>
-        {/* Back Link */}
-        <Link
-          href="/blog"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            color: 'var(--teal)',
-            fontWeight: 600,
-            fontSize: '0.9rem',
-            marginBottom: '2rem',
-          }}
-        >
-          <ArrowLeft className="w-4 h-4" /> Back to Insights
-        </Link>
+    <>
+      <main id="main">
+<section className="pagehead">
+  <div className="wrap wrap-narrow">
+    <ol className="crumbs"><li><a href="/">Home</a></li><li><a href="/">Insights</a></li><li><span aria-current="page">Tech pack guide</span></li></ol>
+    <p className="post-meta mb-2"><span className="badge badge-accent">Guide</span> 12 min read &middot; Updated June 2026</p>
+    <h1 className="h1 display">What belongs in a garment tech pack (and what slows you down)</h1>
+    <p className="lead">A tech pack is not paperwork. It is the contract between what you imagined and what a cutting room in Gazipur will actually produce. Here is what goes in one, in the order it matters.</p>
+  </div>
+</section>
 
-        {/* Article Header */}
-        <div style={{ marginBottom: '2.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>
-            <span
-              style={{
-                padding: '4px 12px',
-                borderRadius: '100px',
-                background: 'rgba(13, 148, 136, 0.12)',
-                color: 'var(--teal)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-              }}
-            >
-              Technical Design Guide
-            </span>
-            <span className="small muted" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Clock className="w-4 h-4" /> 12 min read
-            </span>
-          </div>
+<section className="section">
+  <div className="wrap wrap-narrow">
+    <figure className="media media-16x9 mb-4">
+      <img src="/assets/img/photos/swatches-1600.jpg" srcSet="/assets/img/photos/swatches-600.jpg 600w, /assets/img/photos/swatches-1600.jpg 1600w" sizes="(max-width:900px) 92vw, 56vw" alt="Technical sketches laid out with fabric swatches" loading="lazy" decoding="async" width="1600" height="900" />
+    </figure>
 
-          <h1 className="h1 display" style={{ marginBottom: '1.25rem' }}>
-            What Belongs in a Garment Tech Pack (And What Slows You Down)
-          </h1>
-          <p className="lead muted">
-            A tech pack is not mere paperwork. It is the binding engineering contract between what you imagined in design and what a cutting room in Gazipur will physically produce.
-          </p>
-        </div>
+    <div className="prose">
+      <p>Almost every sampling disaster we have seen traces back to the same root cause: the factory made a reasonable assumption about something the tech pack did not specify. Not sabotage, not incompetence, a gap. Where your document is silent, someone in the sample room decides for you, and they will decide in favour of whatever is easiest to sew.</p>
+      <p>So the goal is not a beautiful tech pack. The goal is a tech pack with no silences.</p>
 
-        {/* Hero Image */}
-        <div
-          style={{
-            borderRadius: 'var(--radius)',
-            overflow: 'hidden',
-            border: '1px solid var(--border)',
-            marginBottom: '3rem',
-            aspectRatio: '16 / 9',
-            position: 'relative',
-          }}
-        >
-          <Image
-            src="/assets/img/photos/swatches-1600.jpg"
-            alt="Technical sketches and fabric swatches on a cutting table"
-            fill
-            priority
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
+      <h2>1. The technical sketch</h2>
+      <p>Flat, proportional, black-and-white line drawings: front, back, and a detail view for anything unusual. Not a fashion illustration, and not a mood photograph. The sketch answers &ldquo;what shape is this and where do the seams go?&rdquo;</p>
+      <p>Call out every seam, every topstitch line, every closure. If a topstitch is 6&nbsp;mm double-needle in a contrast thread, that belongs on the drawing with a leader line, not buried in a comments column three tabs away.</p>
 
-        {/* Article Body */}
-        <div style={{ fontSize: '1.05rem', lineHeight: 1.75, color: 'var(--fg)' }}>
-          <p style={{ marginBottom: '1.5rem' }}>
-            Almost every sampling disaster we have seen traces back to the same root cause: the factory made a reasonable assumption about something the tech pack did not specify. Not sabotage, not incompetence—a gap. Where your document is silent, someone in the sample room decides for you, and they will invariably decide in favor of whatever is easiest to sew.
-          </p>
+      <h2>2. The measurement chart</h2>
+      <p>This is the section that decides whether your sample fits. It needs three things:</p>
+      <ul>
+        <li><strong>Points of measure</strong> named unambiguously. &ldquo;Chest 2.5&nbsp;cm below armhole, laid flat&rdquo; beats &ldquo;chest&rdquo;.</li>
+        <li><strong>Your base size</strong> clearly marked, with the full graded range.</li>
+        <li><strong>Tolerances</strong> per point. Without them, the factory applies its own, and yours are probably tighter.</li>
+      </ul>
+      <p>Two mistakes cost the most time. The first is a chart that contradicts itself, a body width and a total garment width that cannot both be true. The second is grading that jumps inconsistently between sizes, which produces a size set where the middle sizes fit and the ends do not.</p>
 
-          <p style={{ marginBottom: '2rem' }}>
-            The goal of technical design is not to produce an artistic mood board. <strong>The goal is a specification sheet with no silences.</strong>
-          </p>
+      <blockquote>If we can only have one page of your tech pack, we want the measurement chart. Everything else can be rebuilt from a conversation.</blockquote>
 
-          <h2 className="h2 display" style={{ fontSize: '1.6rem', marginTop: '2.5rem', marginBottom: '1rem' }}>
-            1. The Technical Flat Sketch
-          </h2>
-          <p style={{ marginBottom: '1.5rem', color: 'var(--muted)' }}>
-            Flat, proportional, black-and-white line drawings: front, back, and detail callouts for closures, collar construction, or pockets. Avoid artistic shadows or stylized fashion figures.
-          </p>
-          <ul style={{ paddingLeft: '1.5rem', marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--muted)' }}>
-            <li>Call out topstitch gauge (e.g., 6mm double-needle vs 1mm single-needle edgestitch).</li>
-            <li>Specify thread color explicitly (tonal match vs contrast shade).</li>
-            <li>Indicate seam types: 4-thread overlock, flatlock, binding, or taped seams.</li>
-          </ul>
+      <h2>3. Bill of materials</h2>
+      <p>Every component, with a specification precise enough to buy against:</p>
+      <ul>
+        <li><strong>Fabric:</strong> composition, construction, weight in GSM or oz, finish, and the width if it matters to your cost.</li>
+        <li><strong>Thread:</strong> type and ticket, plus whether it must match or contrast.</li>
+        <li><strong>Trims:</strong> buttons (size in ligne, material), zips (brand, length, type), elastic (width, type), drawcords, rivets.</li>
+        <li><strong>Labels:</strong> main, care, size, and any origin or compliance labelling your market requires.</li>
+        <li><strong>Colour:</strong> Pantone TCX or TPG references, not screen colours and not colour names.</li>
+      </ul>
+      <p>&ldquo;Nice quality cotton&rdquo; is not a specification. &ldquo;180&nbsp;GSM single jersey, 100% combed cotton, 30/1, bio-washed&rdquo; is.</p>
 
-          <h2 className="h2 display" style={{ fontSize: '1.6rem', marginTop: '2.5rem', marginBottom: '1rem' }}>
-            2. The Measurement Spec Sheet &amp; Tolerances
-          </h2>
-          <p style={{ marginBottom: '1.5rem', color: 'var(--muted)' }}>
-            This single table dictates whether your sample fits or fails. It requires three critical parameters:
-          </p>
-          <div
-            style={{
-              background: 'var(--panel-alt-bg)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius)',
-              padding: '1.5rem',
-              marginBottom: '2rem',
-            }}
-          >
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                <CheckCircle2 className="w-5 h-5" style={{ color: 'var(--teal)', flexShrink: 0, marginTop: '2px' }} />
-                <span><strong>Explicit Points of Measure (POM):</strong> &ldquo;Chest 2.5cm below armhole, laid flat&rdquo; instead of vague &ldquo;chest width&rdquo;.</span>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                <CheckCircle2 className="w-5 h-5" style={{ color: 'var(--teal)', flexShrink: 0, marginTop: '2px' }} />
-                <span><strong>Clearly Defined Base Size:</strong> State the base size (e.g., Men&rsquo;s Medium) from which all grading rules scale.</span>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                <CheckCircle2 className="w-5 h-5" style={{ color: 'var(--teal)', flexShrink: 0, marginTop: '2px' }} />
-                <span><strong>Acceptable Tolerances (+/-):</strong> Without published tolerances (+/- 0.5cm), factories apply standard commercial limits that may exceed your brand expectation.</span>
-              </li>
-            </ul>
-          </div>
+      <h2>4. Construction notes</h2>
+      <p>How the garment is assembled: seam types, stitch density, whether seams are overlocked, flatlocked, coverstitched or bound. Hem depths. Interlining where it applies. Whether the neck tape is self-fabric or purchased.</p>
+      <p>This is also where you record what you do <em>not</em> want. If a previous supplier gave you twisted side seams, say so and specify the fix.</p>
 
-          <h2 className="h2 display" style={{ fontSize: '1.6rem', marginTop: '2.5rem', marginBottom: '1rem' }}>
-            3. Bill of Materials (BOM)
-          </h2>
-          <p style={{ marginBottom: '1rem', color: 'var(--muted)' }}>
-            Every raw material component must have a technical specification concrete enough for a mill to purchase against:
-          </p>
-          <ul style={{ paddingLeft: '1.5rem', marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--muted)' }}>
-            <li><strong>Shell Fabric:</strong> 100% Combed Organic Cotton, 240 GSM, 24/1 single jersey, reactive dyed, bio-polished.</li>
-            <li><strong>Collar Rib:</strong> 1x1 rib with 5% spandex, 320 GSM, 4.5cm finished width.</li>
-            <li><strong>Trims &amp; Hardware:</strong> YKK #5 antique brass zipper, polyester core-spun thread (Ticket 50), recycled woven satin care labels.</li>
-            <li><strong>Colour Coding:</strong> Always provide Pantone TCX or TPG codes (e.g., 19-4005 TCX Black).</li>
-          </ul>
+      <h2>5. Artwork and placement</h2>
+      <p>Print and embroidery files in vector format wherever possible, with placement measured from a fixed reference point, usually the high point of the shoulder or the centre front neck. &ldquo;Chest print, centred&rdquo; will come back centred on a different part of the chest than you pictured.</p>
+      <p>Specify the print method too. A design that works as a water-based print may look wrong in plastisol, and the hand-feel difference is significant on a soft jersey.</p>
 
-          <div
-            style={{
-              padding: '1.5rem',
-              background: 'rgba(245, 158, 11, 0.08)',
-              borderLeft: '4px solid #f59e0b',
-              borderRadius: 'var(--radius)',
-              marginBottom: '2.5rem',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f59e0b', fontWeight: 700, marginBottom: '0.5rem' }}>
-              <AlertTriangle className="w-5 h-5" /> What Slows Down Costing Most
-            </div>
-            <p className="small" style={{ margin: 0, color: 'var(--fg)', lineHeight: 1.6 }}>
-              Missing trim specifications or ambiguous artwork dimensions. When our merchandisers have to guess whether a graphic is 22cm screen-printed or 10cm embroidered, the indicative costing sheet is delayed.
-            </p>
-          </div>
-        </div>
+      <h2>6. Packing and labelling</h2>
+      <p>The section buyers forget until the goods are on the water. Polybag or not, and what material. Folded or hanging. Size stickers and where they go. Barcodes and which symbology. Cartons: dimensions, how many pieces, solid or ratio packed, and how the carton is marked.</p>
+      <p>Getting this wrong does not ruin a garment, but it can add days at your distribution centre and occasionally triggers a chargeback from a retail customer.</p>
 
-        {/* Footer CTA */}
-        <div
-          className="card"
-          style={{
-            background: 'var(--panel-alt-bg)',
-            border: '1px solid var(--border)',
-            borderRadius: 'var(--radius)',
-            padding: '2.5rem',
-            textAlign: 'center',
-            marginTop: '3.5rem',
-          }}
-        >
-          <h3 className="h3 display" style={{ marginBottom: '0.75rem' }}>
-            Ready to quote your tech pack?
-          </h3>
-          <p className="muted" style={{ marginBottom: '1.5rem' }}>
-            Our Dhaka merchandising team reviews tech packs free of charge to confirm production feasibility and FOB costing.
-          </p>
-          <Link className="btn btn-lg" href="/quote" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-            Submit Your Tech Pack <Send className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
+      <h2>What actually slows you down</h2>
+      <ul>
+        <li><strong>Silence.</strong> Any field left blank becomes someone else&rsquo;s decision.</li>
+        <li><strong>Contradiction.</strong> A measurement chart that disagrees with the sketch forces the factory to guess which one you meant.</li>
+        <li><strong>Screen colours.</strong> Without a Pantone reference, lab dips take extra rounds and everyone gets frustrated.</li>
+        <li><strong>Late changes.</strong> Changing fabric after lab dips are approved resets the colour process completely.</li>
+        <li><strong>Approving verbally.</strong> If it is not written, it did not happen. Approve in email, every time.</li>
+      </ul>
+
+      <h2>If you do not have a tech pack</h2>
+      <p>Send a reference garment instead. A physical sample plus a clear list of what to keep and what to change is often faster and more accurate than a half-finished document. We measure the garment, build the tech pack, and send it back to you for approval before anything is cut.</p>
+
+      <p><a className="link-arrow" href="/../process#techpack">See the full enquiry checklist <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
     </div>
+  </div>
+</section>
+
+</main>
+    </>
   );
 }

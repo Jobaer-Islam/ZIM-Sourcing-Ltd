@@ -1,82 +1,53 @@
-import React from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ShieldCheck, Lock, Mail, ArrowLeft } from 'lucide-react';
-import { COMPANY } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | ZIM Sourcing Ltd',
-  description:
-    'Privacy Policy and Data Protection standards of ZIM Sourcing Ltd. How we handle RFQ information, tech packs, and customer communications.',
+  description: 'How ZIM Sourcing Ltd handles the information you give us. Last updated August 2026.',
 };
 
-export default function PrivacyPage() {
+export default function Page() {
   return (
-    <div style={{ padding: '3.5rem 0 5rem 0' }}>
-      <div className="wrap" style={{ maxWidth: '820px', margin: '0 auto' }}>
-        <Link
-          href="/"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            color: 'var(--teal)',
-            fontWeight: 600,
-            fontSize: '0.9rem',
-            marginBottom: '2rem',
-          }}
-        >
-          <ArrowLeft className="w-4 h-4" /> Back to Home
-        </Link>
-
-        <span className="eyebrow">Legal &amp; Data Protection</span>
-        <h1 className="h1 display" style={{ marginBottom: '1.25rem' }}>
-          Privacy Policy
-        </h1>
-        <p className="lead muted" style={{ marginBottom: '2.5rem' }}>
-          Last updated: October 2026. This policy outlines how ZIM Sourcing Ltd collects, uses, and safeguards information submitted through our website and RFQ forms.
-        </p>
-
-        <div style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--fg)' }}>
-          <h2 className="h3 display" style={{ fontSize: '1.4rem', marginTop: '2rem', marginBottom: '0.75rem' }}>
-            1. Information We Collect
-          </h2>
-          <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>
-            When you request an apparel quotation, email us, or contact our team via WhatsApp, we collect the contact details you voluntarily provide: your name, corporate email address, telephone/WhatsApp number, company name, style specifications, target prices, and uploaded tech pack design files.
-          </p>
-
-          <h2 className="h3 display" style={{ fontSize: '1.4rem', marginTop: '2rem', marginBottom: '0.75rem' }}>
-            2. Proprietary Tech Pack Confidentiality
-          </h2>
-          <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>
-            All technical drawings, proprietary artwork, pattern dimensions, and commercial target prices submitted to ZIM Sourcing Ltd are treated as strictly confidential trade secrets. We never sell, license, or disclose your design assets to competing brands or third-party marketing services. We are pleased to countersign standard mutual Non-Disclosure Agreements (NDAs).
-          </p>
-
-          <h2 className="h3 display" style={{ fontSize: '1.4rem', marginTop: '2rem', marginBottom: '0.75rem' }}>
-            3. How We Use Your Information
-          </h2>
-          <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>
-            Information collected is utilized exclusively to evaluate manufacturing feasibility, prepare indicative FOB costing sheets, coordinate sample proto development, and provide order execution updates.
-          </p>
-
-          <h2 className="h3 display" style={{ fontSize: '1.4rem', marginTop: '2rem', marginBottom: '0.75rem' }}>
-            4. Data Security &amp; Retention
-          </h2>
-          <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>
-            We implement industry-standard encryption protocols (TLS/SSL) for all website transmission. Information received via our quotation forms is securely relayed to our internal merchandising systems.
-          </p>
-
-          <h2 className="h3 display" style={{ fontSize: '1.4rem', marginTop: '2rem', marginBottom: '0.75rem' }}>
-            5. Contact Information
-          </h2>
-          <p style={{ color: 'var(--muted)' }}>
-            For privacy inquiries or to request removal of your contact information from our databases, please contact our compliance desk at{' '}
-            <a href={`mailto:${COMPANY.email}`} style={{ color: 'var(--teal)', fontWeight: 600 }}>
-              {COMPANY.email}
-            </a>.
-          </p>
-        </div>
-      </div>
+    <>
+      <main id="main">
+<section className="pagehead">
+  <div className="wrap wrap-narrow">
+    <ol className="crumbs"><li><a href="/">Home</a></li><li><span aria-current="page">Privacy Policy</span></li></ol>
+    <h1 className="h1 display">Privacy Policy</h1>
+    <p className="lead">How we handle the information you give us. Last updated August 2026.</p>
+  </div>
+</section>
+<section className="section">
+  <div className="wrap wrap-narrow">
+    <div className="prose">
+      <h2>Who we are</h2>
+      <p>ZIM Sourcing Ltd is a private limited company registered in Bangladesh, with its head office at Pallabi, Mirpur, Dhaka 1216. For any privacy question, contact <a href="mailto:info@zimsourcing.com">info@zimsourcing.com</a>.</p>
+      <h2>What we collect</h2>
+      <ul>
+        <li><strong>Enquiry data.</strong> The name, company, email, telephone number and order details you submit through our enquiry form or send us by email.</li>
+        <li><strong>Commercial documents.</strong> Tech packs, designs, specifications and samples you send us for quotation.</li>
+        <li><strong>Technical data.</strong> Standard server logs including IP address, browser type and pages visited.</li>
+      </ul>
+      <h2>How we use it</h2>
+      <p>We use enquiry data solely to respond to your enquiry, prepare costings, and manage any order that follows. We use technical data to keep the site secure and understand which pages are useful. We do not sell, rent or trade your personal data to anyone.</p>
+      <h2>Your designs and specifications</h2>
+      <p>Anything you send us for quotation is treated as commercially confidential. We share it only with the specific partner factories required to quote or produce your order, and only to the extent needed. We will sign a non-disclosure agreement before receiving your materials if you ask us to.</p>
+      <h2>How long we keep it</h2>
+      <p>Enquiry correspondence is retained for up to three years so we can pick up a conversation where it left off. Order records are retained for seven years to meet accounting, customs and export documentation requirements. You may ask us to delete anything not subject to a legal retention obligation.</p>
+      <h2>Cookies</h2>
+      <p>This website does not use advertising or tracking cookies. Your colour theme preference is stored locally in your own browser and is never transmitted to us.</p>
+      <h2>Sharing</h2>
+      <p>We share data only with partner factories and service providers directly involved in delivering your enquiry or order, for example a nominated inspection body, freight forwarder or testing laboratory, and where required by law.</p>
+      <h2>Your rights</h2>
+      <p>You may ask us for a copy of the personal data we hold about you, ask us to correct it, or ask us to delete it. Email <a href="mailto:info@zimsourcing.com">info@zimsourcing.com</a> and we will respond within 30 days. If you are in the UK or EU, you also have the right to complain to your local data protection authority.</p>
+      <h2>Security</h2>
+      <p>This site is served over HTTPS. Enquiry data is transmitted encrypted and stored in access-controlled business email and file systems. No system is perfectly secure, but we take reasonable technical and organisational measures to protect your information.</p>
+      <h2>Changes</h2>
+      <p>If we change this policy we will update the date at the top of this page.</p>
     </div>
+  </div>
+</section>
+
+</main>
+    </>
   );
 }

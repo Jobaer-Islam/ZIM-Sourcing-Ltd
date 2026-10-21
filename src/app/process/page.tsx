@@ -1,308 +1,322 @@
-import React from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import PacklistChecker from '@/components/ui/PacklistChecker';
-import { ArrowRight, CheckCircle2, ShieldCheck, Clock, FileCheck2, Send, AlertCircle } from 'lucide-react';
-import { WORKFLOW_STEPS, COMPANY } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'How to Order Garments from Bangladesh | 12-Step Process',
-  description:
-    'Comprehensive guide to the 12 stages of apparel production with ZIM Sourcing Ltd in Dhaka: development, sampling, PP approval, bulk QC, final AQL inspection, and export shipment.',
+  title: 'How to Order Garments from Bangladesh | ZIM Sourcing',
+  description: 'The nine stages of a ZIM Sourcing order: enquiry, development, approvals, materials, production, inspection, shipment and review, explained for buyers.',
 };
 
-const SAMPLE_MATRIX = [
-  {
-    type: 'Proto / Development Sample',
-    purpose: 'Confirms technical construction, silhouette, proportions, and design interpretation.',
-    fabric: 'Available similar fabric / strike-off',
-    turnaround: '7–10 working days',
-  },
-  {
-    type: 'Fit Sample',
-    purpose: 'Evaluates drape, movement, base size measurements, and pattern balance.',
-    fabric: 'Actual fabric or closest laboratory substitute',
-    turnaround: '10–14 working days',
-  },
-  {
-    type: 'Size Set',
-    purpose: 'Validates pattern grading across every size (e.g., XS through 3XL).',
-    fabric: 'Approved bulk fabric',
-    turnaround: '12–15 working days',
-  },
-  {
-    type: 'Salesman Sample (SMS)',
-    purpose: 'Used by buyers for showroom presentation, marketing campaigns, and pre-orders.',
-    fabric: 'Bulk fabric, dyed trims, and branding',
-    turnaround: '15–20 working days',
-  },
-  {
-    type: 'Pre-Production (PP) Sample',
-    purpose: 'The definitive gold seal standard that governs all bulk production cutting.',
-    fabric: '100% bulk fabric, approved trims, and final polybag/tags',
-    turnaround: 'Prior to bulk fabric cutting',
-  },
-  {
-    type: 'Shipment Sample',
-    purpose: 'Exact record of what was packed and loaded into the shipping container.',
-    fabric: 'Pulled at random from packed export cartons',
-    turnaround: 'Dispatched with final FRI report',
-  },
-];
-
-export default function ProcessPage() {
+export default function Page() {
   return (
-    <div style={{ padding: '3.5rem 0 5rem 0' }}>
-      <div className="wrap">
-        {/* Page Head */}
-        <div style={{ maxWidth: '820px', marginBottom: '3.5rem' }}>
-          <span className="eyebrow">Production Lifecycle</span>
-          <h1 className="h1 display" style={{ marginBottom: '1.25rem' }}>
-            How to Order Apparel from Bangladesh
-          </h1>
-          <p className="lead muted">
-            Clear, milestone-driven production from Dhaka. Every stage of your order follows an agreed Time &amp; Action (T&amp;A) calendar with accountable owners and transparent inspection sign-offs.
-          </p>
-          <div className="cluster mt-4" style={{ gap: '1rem' }}>
-            <Link className="btn btn-lg" href="/quote">
-              Start an Enquiry
-            </Link>
-            <a className="btn btn-ghost btn-lg" href="#techpack">
-              Interactive Tech Pack Checker
-            </a>
+    <>
+      <main id="main">
+<section className="pagehead">
+  <div className="wrap">
+    <ol className="crumbs"><li><a href="/">Home</a></li><li><span aria-current="page">How to Order</span></li></ol>
+    <p className="eyebrow">How to order</p>
+    <h1 className="h1 display">How to place an order.</h1>
+    <p className="lead">The nine stages of an order, what happens at each one, and the commercial terms we work on. Quantities, pricing and timing are confirmed per programme, because they depend on the product, the fabric and the season.</p>
+    <div className="cluster mt-4">
+      <a className="btn" href="/quote">Start an enquiry</a>
+      <a className="btn btn-ghost" href="#techpack">What to send us</a>
+    </div>
+  </div>
+</section>
+
+<section className="section" id="journey">
+  <div className="wrap">
+    <div className="section-head">
+      <p className="eyebrow">The order journey</p>
+      <h2 className="h2 display">The nine stages of an order.</h2>
+      <p className="lead mt-2">This is the sequence for a first order on a brand-new style. Repeat orders on approved styles omit stages two and three and move considerably faster.</p>
+      <p className="mt-2 muted">Worth knowing: much of any apparel calendar is not sewing. A substantial part is fabric being knitted or woven and dyed to your shade, and a further part is fit and colour approval, which moves at your pace. We issue a dated calendar at order confirmation so the schedule is agreed rather than assumed.</p>
+    </div>
+
+    <div className="steps">
+      <article className="step">
+        <div className="step-n">STAGE 01</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Enquiry &amp; indicative costing</h3>
+            <p className="muted">You send styles, quantities, target price and delivery window. We check feasibility, identify the right factory type and come back with an indicative FOB costing. If your target price is not achievable we say so straight away, and explain what would need to change: fabric, construction, quantity or delivery date.</p>
           </div>
+          <dl className="step-deliv">
+            <dt>You provide</dt><dd>Tech pack or sketches, quantities, target price, destination, delivery window</dd>
+            <dt>You receive</dt><dd>Indicative cost sheet, feasibility notes, proposed development calendar</dd>
+            <dt>Owner</dt><dd>Merchandising</dd>
+          </dl>
         </div>
+      </article>
 
-        {/* 12-Step Detailed Sequence */}
-        <div style={{ marginBottom: '5rem' }}>
-          <div style={{ marginBottom: '2.5rem' }}>
-            <span className="eyebrow">The 12 Stages</span>
-            <h2 className="h2 display">From First Sketch to Ex-Factory Container</h2>
-            <p className="muted" style={{ maxWidth: '650px', marginTop: '0.5rem' }}>
-              Repeat orders on approved styles skip steps 2 and 3, reducing standard lead time significantly.
-            </p>
+      <article className="step">
+        <div className="step-n">STAGE 02</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Development &amp; proto sample</h3>
+            <p className="muted">We build or refine the tech pack, source fabric and trim options, cut a first pattern and produce a proto sample in available fabric. The proto proves construction and proportion, it is not a fit or colour approval. You receive photographs before the courier goes out, so obvious corrections start immediately rather than after transit.</p>
           </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
-            {WORKFLOW_STEPS.map((step) => (
-              <div
-                key={step.step}
-                className="card"
-                style={{
-                  background: 'var(--panel-bg)',
-                  border: '1px solid var(--border)',
-                  borderRadius: 'var(--radius)',
-                  padding: '1.75rem 2rem',
-                  display: 'grid',
-                  gridTemplateColumns: '80px 1fr 240px',
-                  gap: '2rem',
-                  alignItems: 'center',
-                }}
-              >
-                <div>
-                  <span
-                    style={{
-                      fontSize: '1.75rem',
-                      fontWeight: 800,
-                      color: 'var(--teal)',
-                      display: 'block',
-                      letterSpacing: '-0.5px',
-                    }}
-                  >
-                    {step.step < 10 ? `0${step.step}` : step.step}
-                  </span>
-                  <span className="small muted" style={{ fontSize: '0.75rem', textTransform: 'uppercase' }}>
-                    Stage
-                  </span>
-                </div>
-
-                <div>
-                  <h3 className="h3 display" style={{ fontSize: '1.25rem', marginBottom: '0.4rem' }}>
-                    {step.title}
-                  </h3>
-                  <p className="small muted" style={{ margin: 0, lineHeight: 1.6 }}>
-                    {step.desc}
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    background: 'var(--panel-alt-bg)',
-                    padding: '0.85rem 1rem',
-                    borderRadius: 'var(--radius-sm, 8px)',
-                    border: '1px solid var(--border)',
-                  }}
-                >
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--muted)', display: 'block', marginBottom: '2px' }}>
-                    Critical Deliverable
-                  </span>
-                  <strong style={{ fontSize: '0.88rem', color: 'var(--fg)' }}>
-                    Written Approval &amp; T&amp;A Log
-                  </strong>
-                </div>
-              </div>
-            ))}
-          </div>
+          <dl className="step-deliv">
+            <dt>You receive</dt><dd>Proto sample, fabric hangers, trim card, photographs, revised cost sheet</dd>
+            <dt>Typical duration</dt><dd>Varies by category; confirmed in the development calendar</dd>
+            <dt>Owner</dt><dd>Product Development</dd>
+          </dl>
         </div>
+      </article>
 
-        {/* Visual Factory Interlude */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem',
-            marginBottom: '5rem',
-          }}
-        >
-          <div style={{ borderRadius: 'var(--radius)', overflow: 'hidden', border: '1px solid var(--border)' }}>
-            <Image
-              src="/assets/img/photos/sewing-line-600.jpg"
-              alt="Industrial sewing production line in Dhaka"
-              width={600}
-              height={450}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
+      <article className="step">
+        <div className="step-n">STAGE 03</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Fit, colour &amp; material approval</h3>
+            <p className="muted">Fit samples in your base size, graded to a full size set. In parallel: lab dips for every colour, strike-offs for prints, embroidery sew-outs, and a physical trim card. Nothing proceeds to bulk booking until every item on this list carries a written approval from you. The number of submits depends on how complete the specification is at the outset.</p>
           </div>
-          <div style={{ borderRadius: 'var(--radius)', overflow: 'hidden', border: '1px solid var(--border)' }}>
-            <Image
-              src="/assets/img/photos/designer-600.jpg"
-              alt="Apparel designer drafting pattern and tech pack"
-              width={600}
-              height={450}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
-          </div>
-          <div style={{ borderRadius: 'var(--radius)', overflow: 'hidden', border: '1px solid var(--border)' }}>
-            <Image
-              src="/assets/img/photos/port-cranes-600.jpg"
-              alt="Chittagong port container loading"
-              width={600}
-              height={450}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
-          </div>
+          <dl className="step-deliv">
+            <dt>You approve</dt><dd>Fit sample, size set, lab dips, strike-offs, sew-outs, trim card, care and content labels</dd>
+            <dt>Typical duration</dt><dd>Depends on the number of fit submits and your review time</dd>
+            <dt>Owner</dt><dd>Product Development &amp; Merchandising</dd>
+          </dl>
         </div>
+      </article>
 
-        {/* Interactive Tech Pack Section */}
-        <div id="techpack" style={{ marginBottom: '5rem', paddingTop: '2rem' }}>
-          <div className="split" style={{ alignItems: 'flex-start', gap: '3rem' }}>
-            <div>
-              <span className="eyebrow">Enquiry Preparation</span>
-              <h2 className="h2 display" style={{ marginBottom: '1rem' }}>
-                What Belongs in a Production Tech Pack?
-              </h2>
-              <p className="lead muted" style={{ marginBottom: '1.5rem' }}>
-                The more complete your technical package, the faster and more precise our costing will be.
-                Even if you only possess reference photographs, our Dhaka technical design department can construct the full specification sheet with you.
-              </p>
-              <div
-                style={{
-                  background: 'var(--panel-alt-bg)',
-                  borderLeft: '4px solid var(--teal)',
-                  padding: '1.25rem',
-                  borderRadius: 'var(--radius)',
-                  marginBottom: '2rem',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.35rem' }}>
-                  <AlertCircle className="w-4 h-4" style={{ color: 'var(--teal)' }} />
-                  <strong style={{ fontSize: '0.95rem' }}>Pro Tip for Sourcing Teams:</strong>
-                </div>
-                <p className="small muted" style={{ margin: 0, lineHeight: 1.6 }}>
-                  Always define points of measure (POM) alongside acceptable commercial tolerances (+/- 0.5cm or 1cm) in your base size before grading.
-                </p>
-              </div>
-              <Link className="btn btn-lg" href="/quote">
-                Submit Your Files for Costing
-              </Link>
-            </div>
-
-            <div>
-              <PacklistChecker />
-            </div>
+      <article className="step">
+        <div className="step-n">STAGE 04</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Order confirmation &amp; booking</h3>
+            <p className="muted">You issue the purchase order; we issue a proforma invoice and confirm the allocated factory by name. Materials are booked, the production slot is locked, and you receive the time-and-action calendar for the whole order. From this point you receive written progress reports through to shipment.</p>
           </div>
+          <dl className="step-deliv">
+            <dt>You provide</dt><dd>Purchase order, L/C or advance payment per agreed terms</dd>
+            <dt>You receive</dt><dd>Proforma invoice, named factory and address, full TNA calendar, compliance certificate set</dd>
+            <dt>Owner</dt><dd>Merchandising</dd>
+          </dl>
         </div>
+      </article>
 
-        {/* Sample Matrix Comparison Table */}
-        <div style={{ marginBottom: '5rem' }}>
-          <div style={{ marginBottom: '2rem' }}>
-            <span className="eyebrow">Development Protocol</span>
-            <h2 className="h2 display">Apparel Sample Types &amp; Purpose</h2>
-            <p className="lead muted">
-              Confusing one sample type for another is one of the most common causes of miscommunication in offshore production.
-            </p>
+      <article className="step">
+        <div className="step-n">STAGE 05</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Materials in-house &amp; PP approval</h3>
+            <p className="muted">Fabric arrives and is inspected to the 4-point system before cutting is authorised. We produce the pre-production sample in actual bulk fabric, trims and packaging. Once you approve it, we hold the PP meeting on the factory floor with the production, quality and cutting teams present, using the approved sample as the physical reference.</p>
           </div>
-
-          <div
-            style={{
-              overflowX: 'auto',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius)',
-              background: 'var(--panel-bg)',
-            }}
-          >
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
-              <thead>
-                <tr style={{ borderBottom: '1px solid var(--border)', background: 'var(--panel-alt-bg)' }}>
-                  <th style={{ padding: '1rem 1.25rem', fontWeight: 600 }}>Sample Stage</th>
-                  <th style={{ padding: '1rem 1.25rem', fontWeight: 600 }}>What It Proves</th>
-                  <th style={{ padding: '1rem 1.25rem', fontWeight: 600 }}>Fabric &amp; Trims Used</th>
-                  <th style={{ padding: '1rem 1.25rem', fontWeight: 600 }}>Turnaround</th>
-                </tr>
-              </thead>
-              <tbody>
-                {SAMPLE_MATRIX.map((s, idx) => (
-                  <tr
-                    key={idx}
-                    style={{
-                      borderBottom: idx < SAMPLE_MATRIX.length - 1 ? '1px solid var(--border)' : 'none',
-                    }}
-                  >
-                    <td style={{ padding: '1.25rem', fontWeight: 600, color: 'var(--teal)' }}>
-                      {s.type}
-                    </td>
-                    <td style={{ padding: '1.25rem', color: 'var(--fg)', lineHeight: 1.5 }}>
-                      {s.purpose}
-                    </td>
-                    <td style={{ padding: '1.25rem', color: 'var(--muted)' }}>
-                      {s.fabric}
-                    </td>
-                    <td style={{ padding: '1.25rem', fontWeight: 500 }}>
-                      {s.turnaround}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <dl className="step-deliv">
+            <dt>You approve</dt><dd>Pre-production (PP) sample, the single most important approval in the order</dd>
+            <dt>Checks performed</dt><dd>4-point fabric inspection, shade band approval, shrinkage and wash tests</dd>
+            <dt>Owner</dt><dd>Quality &amp; Production</dd>
+          </dl>
         </div>
+      </article>
 
-        {/* Call to action */}
-        <div style={{ textAlign: 'center' }}>
-          <div
-            className="card"
-            style={{
-              background: 'var(--panel-alt-bg)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius)',
-              padding: '2.5rem',
-              maxWidth: '750px',
-              margin: '0 auto',
-            }}
-          >
-            <h3 className="h3 display" style={{ marginBottom: '0.75rem' }}>
-              Ready to begin Stage 01?
-            </h3>
-            <p className="muted" style={{ marginBottom: '1.5rem' }}>
-              Share your target styles and target price. We will return with an indicative FOB cost sheet and proposed calendar.
-            </p>
-            <Link className="btn btn-lg" href="/quote" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-              Request an Indicative Quotation <Send className="w-4 h-4" />
-            </Link>
+      <article className="step">
+        <div className="step-n">STAGE 06</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Bulk production &amp; inline QC</h3>
+            <p className="muted">Cutting, sewing, washing and finishing. Our QC team attends the sewing floor at several points through the run, checking measurements, construction and shade against the approved PP sample. Findings are corrected on the line while the order is still fixable, not discovered at final inspection when the only options are rework or discount.</p>
           </div>
+          <dl className="step-deliv">
+            <dt>You receive</dt><dd>Written progress reports with photographs and output figures</dd>
+            <dt>Inline checkpoints</dt><dd>Multiple points through the sewing run</dd>
+            <dt>Owner</dt><dd>Quality Assurance</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article className="step">
+        <div className="step-n">STAGE 07</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Final random inspection</h3>
+            <p className="muted">Once the order is substantially packed, we run a final random inspection against internationally recognised sampling standards, at the level agreed with you. You receive the full report with photographs and a clear pass or fail. A failed lot is re-checked in full and re-inspected before shipment, at the factory&rsquo;s cost.</p>
+          </div>
+          <dl className="step-deliv">
+            <dt>You receive</dt><dd>Final inspection report, measurement sheet, defect log, carton and packing photographs</dd>
+            <dt>Standard</dt><dd>Internationally recognised random sampling standards</dd>
+            <dt>Owner</dt><dd>Quality Assurance</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article className="step">
+        <div className="step-n">STAGE 08</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Ex-factory, shipment &amp; documents</h3>
+            <p className="muted">We book space with your nominated forwarder or ours, supervise container stuffing, and issue the complete export document set to your bank once the container leaves. Air freight, LCL and FCL all handled; DDP available to most destinations on request.</p>
+          </div>
+          <dl className="step-deliv">
+            <dt>Documents issued</dt><dd>Commercial invoice, packing list, bill of lading or AWB, certificate of origin (GSP Form A where applicable), inspection certificate, test reports</dd>
+            <dt>Terms available</dt><dd>FOB, FCA, CFR, CIF, DAP, DDP</dd>
+            <dt>Owner</dt><dd>Shipping &amp; Documentation</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article className="step">
+        <div className="step-n">STAGE 09</div>
+        <div className="step-body">
+          <div>
+            <h3 className="h3 display">Delivery review &amp; carry-forward</h3>
+            <p className="muted">After delivery we request your receiving report and warehouse feedback. Any issue identified, whether a measurement drift, a trim failure in retail or a packing method that slowed your distribution centre, is recorded against the style and applied to subsequent orders.</p>
+          </div>
+          <dl className="step-deliv">
+            <dt>You receive</dt><dd>Season review, defect analysis, carry-forward action list, reorder costing</dd>
+            <dt>Reorder lead time</dt><dd>Materially shorter on approved styles</dd>
+            <dt>Owner</dt><dd>Merchandising</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section className="section-tight">
+  <div className="wrap">
+    <div className="grid g-3">
+      <figure className="media media-4x3 reveal"><img src="/assets/img/photos/designer-600.jpg" srcSet="/assets/img/photos/designer-600.jpg 600w, /assets/img/photos/designer-900.jpg 900w" sizes="(max-width:640px) 92vw, (max-width:1024px) 46vw, 30vw" alt="Apparel designer working on technical sketches and patterns" loading="lazy" decoding="async" width="600" height="450" /></figure>
+      <figure className="media media-4x3 reveal"><img src="/assets/img/photos/sewing-line-600.jpg" srcSet="/assets/img/photos/sewing-line-600.jpg 600w, /assets/img/photos/sewing-line-900.jpg 900w" sizes="(max-width:640px) 92vw, (max-width:1024px) 46vw, 30vw" alt="Machine operator sewing a garment on an industrial machine" loading="lazy" decoding="async" width="600" height="450" /></figure>
+      <figure className="media media-4x3 reveal"><img src="/assets/img/photos/port-terminal-600.jpg" srcSet="/assets/img/photos/port-terminal-600.jpg 600w, /assets/img/photos/port-terminal-900.jpg 900w" sizes="(max-width:640px) 92vw, (max-width:1024px) 46vw, 30vw" alt="Shipping port with stacked cargo containers awaiting loading" loading="lazy" decoding="async" width="600" height="450" /></figure>
+    </div>
+  </div>
+</section>
+
+<section className="section section-alt" id="techpack">
+  <div className="wrap">
+    <div className="split">
+      <div>
+        <p className="eyebrow">Before enquiring</p>
+        <h2 className="h2 display">Information required for an accurate quotation.</h2>
+        <p className="lead mt-2">The more of this you can provide, the tighter the costing. A reference photograph alone is fine; we will build the specification with you before quoting.</p>
+        <div className="cluster mt-4">
+          <a className="btn" href="/quote">Open the enquiry form</a>
+          <a className="btn btn-ghost" href="mailto:contact@zimsourcing.com?subject=Tech%20pack%20enquiry">Email your tech pack</a>
+        </div>
+      </div>
+      <div className="card reveal">
+        <h3 className="h4">Enquiry checklist</h3>
+        <ul className="checklist mt-1">
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Technical sketch or reference sample:</strong> front, back and any detail views.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Fabric specification:</strong> composition, construction, GSM or oz, finish.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Measurement chart:</strong> points of measure with tolerances, in your base size.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Size range and ratio:</strong> for example S&ndash;XXL at 1:2:3:3:2:1.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Colourways:</strong> Pantone TCX or TPG references, plus quantity per colour.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Trims and artwork:</strong> labels, tags, buttons, zips, print or embroidery files.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Packing instructions:</strong> polybag, hanger, folding, carton and barcode requirements.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Target price and Incoterm:</strong> together with the destination port or door.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Delivery window:</strong> the date goods must be in your warehouse.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Compliance requirements:</strong> certifications, testing protocol, nominated labs.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="section section-alt" id="sampling">
+  <div className="wrap">
+    <div className="section-head">
+      <p className="eyebrow">Sampling</p>
+      <h2 className="h2 display">Sample types and their purpose.</h2>
+      <p className="lead mt-2">Confusing one sample type for another is a common cause of order failure. What each one actually confirms:</p>
+    </div>
+    <div className="table-wrap reveal">
+      <table>
+        <caption className="sr-only">Sample types and what each one confirms</caption>
+        <thead><tr><th scope="col">Sample</th><th scope="col">What it proves</th><th scope="col">Fabric used</th></tr></thead>
+        <tbody>
+          <tr><td>Proto / development</td><td>Construction, proportion and overall look</td><td>Any available similar fabric</td></tr>
+          <tr><td>Fit sample</td><td>Measurements and fit in your base size</td><td>Actual or close substitute</td></tr>
+          <tr><td>Size set</td><td>Grading accuracy across the full size range</td><td>Actual fabric</td></tr>
+          <tr><td>Salesman (SMS)</td><td>Showroom and pre-sell presentation</td><td>Actual fabric and trims</td></tr>
+          <tr><td>Pre-production (PP)</td><td>The bulk standard, the reference for the whole order</td><td>Bulk fabric, trims and packaging</td></tr>
+          <tr><td>Shipment sample</td><td>Record of what actually shipped</td><td>Pulled from packed bulk</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p className="table-note">Sampling charges are quoted per style and are normally credited against your first bulk order. Courier is on the buyer&rsquo;s account or collect number. Never approve bulk against a proto sample: the PP sample is the only approval that governs production.</p>
+  </div>
+</section>
+
+<section className="band">
+  <img src="/assets/img/photos/sewing-floor-2-1600.jpg" srcSet="/assets/img/photos/sewing-floor-2-600.jpg 600w, /assets/img/photos/sewing-floor-2-1600.jpg 1600w" sizes="100vw" alt="Machine operator sewing fabric on a garment factory floor" loading="lazy" decoding="async" width="1600" height="1067" />
+  <div className="wrap">
+    <p className="eyebrow">Quality</p>
+    <h2 className="h2 display" style={{ maxWidth: '24ch' }}>Inspection at every stage of production.</h2>
+    <p className="lead mt-3" style={{ maxWidth: '56ch' }}>Defects identified during sewing can be corrected on the line at minimal cost. For this reason our quality team attends the floor at several points through the run, in addition to final random inspection.</p>
+  </div>
+</section>
+
+<section className="section" id="quality">
+  <div className="wrap">
+    <div className="split">
+      <div>
+        <p className="eyebrow">Quality assurance</p>
+        <h2 className="h2 display">Our inspection standard.</h2>
+        <p className="lead mt-2">We inspect against internationally recognised random sampling standards, at the acceptance level agreed with you for the programme. Critical defects are zero tolerance.</p>
+        <p className="mt-3 muted">You may appoint SGS, Intertek, Bureau Veritas, TUV or your own inspector, instead of or alongside our team. We coordinate access and share our own report either way.</p>
+        <div className="cluster mt-4"><a className="btn btn-ghost" href="/compliance">See factory compliance</a></div>
+      </div>
+      <div className="grid" style={{ gap: '1rem' }}>
+        <div className="card reveal"><span className="card-num">CHECKPOINT 01</span><h3 className="h4">Incoming materials</h3><p className="muted small">Fabric inspected to the 4-point system before cutting. Shade bands approved. Shrinkage, colourfastness and wash tests recorded. Trims checked against the approved card.</p></div>
+        <div className="card reveal"><span className="card-num">CHECKPOINT 02</span><h3 className="h4">Inline, through the run</h3><p className="muted small">Measurements, construction, shade and workmanship checked against the approved PP sample while the line is still running and corrections still cost nothing.</p></div>
+        <div className="card reveal"><span className="card-num">CHECKPOINT 03</span><h3 className="h4">Final random inspection</h3><p className="muted small">Once substantially packed. Full measurement audit, defect classification, carton and barcode verification, packing check, and a written pass or fail with photographs.</p></div>
+        <div className="card reveal"><span className="card-num">CHECKPOINT 04</span><h3 className="h4">Loading supervision</h3><p className="muted small">Carton counts verified against the packing list, container condition checked, and stuffing photographed and reported before the seal goes on.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="section section-alt" id="commercial">
+  <div className="wrap">
+    <div className="section-head">
+      <p className="eyebrow">Commercial terms</p>
+      <h2 className="h2 display">Payment terms, Incoterms and cost structure.</h2>
+    </div>
+
+    <div className="grid g-2 mb-4">
+      <div className="card reveal">
+        <h3 className="h4">Payment terms</h3>
+        <div className="table-wrap mt-1" style={{ border: '0' }}>
+          <table style={{ minWidth: '0' }}>
+            <tbody>
+              <tr><td>Irrevocable L/C at sight</td><td>Standard for new accounts. Advised through our bank in Dhaka.</td></tr>
+              <tr><td>T/T</td><td>A deposit against proforma invoice, with the balance against shipping documents.</td></tr>
+              <tr><td>Usance L/C</td><td>Available to buyers with an established trading history.</td></tr>
+              <tr><td>Sampling charges</td><td>Quoted per style; normally credited against your first bulk order.</td></tr>
+              <tr><td>Buying commission</td><td>Agreed in writing before the first order.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="card reveal">
+        <h3 className="h4">Incoterms 2020 we work on</h3>
+        <div className="table-wrap mt-1" style={{ border: '0' }}>
+          <table style={{ minWidth: '0' }}>
+            <tbody>
+              <tr><td>FOB</td><td>Our default. Free on board Chattogram or Dhaka air.</td></tr>
+              <tr><td>FCA</td><td>Handover to your nominated forwarder at an agreed point.</td></tr>
+              <tr><td>CFR / CIF</td><td>We arrange ocean freight, and insurance under CIF.</td></tr>
+              <tr><td>DAP / DDP</td><td>Delivered to your door; DDP includes duty and clearance. Available to most US, UK and EU destinations.</td></tr>
+              <tr><td>Ex-works</td><td>Available on request, though rarely the cheapest option for the buyer.</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+
+    <div className="card reveal">
+      <h3 className="h4">What is inside an FOB price</h3>
+      <p className="muted small mt-1">Every costing we issue is broken down line by line, so you can see where the price comes from and challenge any part of it. Supporting quotations are available on request.</p>
+      <div className="grid g-3 mt-2">
+        <div><h4 className="h4">Materials</h4><p className="muted small">Fabric consumption and rate, plus trims: labels, tags, buttons, zips, thread, elastic, polybag and carton.</p></div>
+        <div><h4 className="h4">Making</h4><p className="muted small">Cutting, sewing, finishing and factory overhead, plus any value addition such as print, embroidery, wash or special finishes.</p></div>
+        <div><h4 className="h4">Compliance &amp; logistics</h4><p className="muted small">Third-party testing and inspection, inland freight, port and documentation charges, and our commission shown as a separate line.</p></div>
+      </div>
+      <p className="table-note">The balance between these lines varies widely by product. A printed heavy fleece and a plain woven shirt have very different cost structures, which is why we quote per style rather than publish a formula.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+    </>
   );
 }
