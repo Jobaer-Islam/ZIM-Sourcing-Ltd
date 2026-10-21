@@ -3,6 +3,7 @@ import Script from 'next/script';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.zimsourcing.com'),
   title: 'Garments Buying House in Bangladesh | ZIM Sourcing Ltd',
   description: 'ZIM Sourcing manages apparel development, factory sourcing, quality control and shipment in Bangladesh for international buyers. Request an FOB quotation.',
   icons: {

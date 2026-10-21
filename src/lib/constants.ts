@@ -3,6 +3,8 @@ export const COMPANY = {
   shortName: 'ZIM Sourcing',
   legalName: 'ZIM Sourcing Ltd',
   tagline: 'Garments Buying House in Dhaka, Bangladesh',
+  url: 'https://www.zimsourcing.com',
+  domain: 'zimsourcing.com',
   description:
     'ZIM Sourcing Ltd manages apparel development, compliant factory sourcing, quality assurance, and export shipments in Bangladesh for international fashion brands and retailers.',
   email: 'info@zimsourcing.com',
