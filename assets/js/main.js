@@ -856,9 +856,18 @@
       function show(i) {
         current = i;
         steps.forEach(function (s, n) { s.hidden = n !== i; });
-        if (back) back.hidden = i === 0;
-        if (next) next.hidden = i === steps.length - 1;
-        if (send) send.hidden = i !== steps.length - 1;
+        if (back) {
+          back.hidden = (i === 0);
+          back.style.display = (i === 0) ? 'none' : 'inline-flex';
+        }
+        if (next) {
+          next.hidden = (i === steps.length - 1);
+          next.style.display = (i === steps.length - 1) ? 'none' : 'inline-flex';
+        }
+        if (send) {
+          send.hidden = (i !== steps.length - 1);
+          send.style.display = (i !== steps.length - 1) ? 'none' : 'inline-flex';
+        }
         if (fill) fill.style.width = ((i + 1) / steps.length * 100) + '%';
         if (count) count.textContent = 'Step ' + (i + 1) + ' of ' + steps.length;
         dots.forEach(function (d, n) { d.classList.toggle('is-on', n <= i); });
@@ -984,19 +993,31 @@
 
       fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
         .then(function (r) {
-          if (!r.ok) throw new Error('bad status');
+          return r.json().catch(function () { return { success: r.ok }; }).then(function (data) {
+            if (!r.ok && !data.success) throw new Error((data && (data.error || data.message)) || 'Submission error');
+            return data;
+          });
+        })
+        .then(function (data) {
           form.reset();
-          if (stepped) { steps.forEach(function (s, n) { s.hidden = n !== 0; }); }
+          if (stepped) { show(0); }
           if (status) {
             status.className = 'form-status is-ok';
-            status.textContent = 'Thank you, your request has been received. A ZIM Sourcing Ltd merchandiser will review it and reply by email. Your reference is ' + ref + ' — please keep it for future correspondence.';
+            var msg = 'Thank you, your quotation request has been sent! Reference: ' + ref + '. ';
+            if (data && data.note) {
+              msg += data.note;
+            } else {
+              msg += 'A ZIM Sourcing Ltd merchandiser will review it and reply by email.';
+            }
+            status.textContent = msg;
             status.scrollIntoView({ block: 'center', behavior: 'smooth' });
           }
         })
-        .catch(function () {
+        .catch(function (err) {
           if (status) {
             status.className = 'form-status is-err';
-            status.textContent = 'The form could not be sent. Please email contact@zimsourcing.com and we will pick it up from there.';
+            status.textContent = (err && err.message) ? err.message : 'The form could not be sent. Please email contact@zimsourcing.com or rayhanek202@gmail.com directly.';
+            status.scrollIntoView({ block: 'center', behavior: 'smooth' });
           }
         })
         .finally(function () { if (btn) { btn.disabled = false; btn.textContent = label; } });

@@ -23,11 +23,24 @@ ZIM Sourcing Ltd provides end-to-end apparel sourcing, factory allocation, produ
 
 ## Running Locally
 
-1. Open a terminal in the project directory:
-   ```bash
-   python -m http.server 8000
-   ```
-2. Open [http://localhost:8000](http://localhost:8000) in your browser.
+Run the local server with built-in Resend email API integration:
+```bash
+python server.py
+```
+Open [http://localhost:8000](http://localhost:8000) in your browser.
+
+## Email & RFQ Submission Setup (Resend)
+
+The quotation form is wired to send inquiries via **Resend**:
+- **API Key**: Configured in `server.py` and `api/send.js` (can also be overridden using `RESEND_API_KEY` environment variable).
+- **Target Recipient Emails**:
+  - `rayhanek202@gmail.com`
+  - `contact@zimsourcing.com`
+  - `info@zimsourcing.com`
+- **Domain Verification Note**:
+  - On Resend free sandbox, emails are routed to your verified account email (`jobaerislam10@gmail.com`).
+  - To enable direct delivery to `rayhanek202@gmail.com`, `contact@zimsourcing.com`, and `info@zimsourcing.com`, verify the `zimsourcing.com` domain in [Resend Domains Dashboard](https://resend.com/domains).
+- **Cloud Deployment**: When deploying to Vercel or Netlify, the serverless function in `api/send.js` automatically handles form submissions.
 
 ## Customization
 

@@ -761,9 +761,10 @@ hr{border:0;border-top:1px solid var(--border);margin-block:clamp(2rem,4vw,3.5re
 .steps-bar li.is-on{color:var(--gold)}
 .steps-count{margin:0 0 1.3rem;font-size:.78rem;color:var(--text-3)}
 .form-step{border:0;padding:0;margin:0;min-width:0}
-.form-step[hidden]{display:none}
+.form-step[hidden],[hidden],.form-nav [hidden],.btn[hidden],button[hidden]{display:none !important}
 .form-nav{display:flex;gap:.7rem;align-items:center;margin-top:.4rem}
 .form-nav .btn{flex:1 1 auto;justify-content:center}
+.form-nav .btn[hidden]{display:none !important}
 .form-nav .btn-ghost{flex:0 0 auto}
 .form-hint{margin:.55rem 0 0;font-size:.8rem;color:var(--text-3)}
 .checkbox-req{align-items:flex-start}

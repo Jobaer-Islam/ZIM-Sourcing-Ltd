@@ -9,6 +9,11 @@ desktop.ini
 *.swp
 *.swo
 
+# Environment Variables
+.env
+.env.local
+.env.*
+
 # Local Logs and Scratch
 *.log
 scratch/
