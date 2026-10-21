@@ -72,7 +72,7 @@ export default async function handler(req, res) {
         'User-Agent': 'resend-node:2.0.0'
       },
       body: JSON.stringify({
-        from: 'ZIM Sourcing <onboarding@resend.dev>',
+        from: 'ZIM Sourcing <contact@zimsourcing.com>',
         to: recipients,
         subject,
         html,

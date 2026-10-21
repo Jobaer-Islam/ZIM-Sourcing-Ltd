@@ -49,9 +49,9 @@ export async function POST(req: Request) {
       extras: data.extras
     });
 
-    // Attempt sending to primary recipients
+    // Attempt sending to primary recipients from verified company domain
     let sendResult = await resend.emails.send({
-      from: "ZIM Sourcing <onboarding@resend.dev>",
+      from: "ZIM Sourcing <contact@zimsourcing.com>",
       to: TARGET_RECIPIENTS,
       subject,
       html,
