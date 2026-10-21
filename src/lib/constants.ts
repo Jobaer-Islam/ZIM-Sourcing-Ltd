@@ -9,12 +9,12 @@ export const COMPANY = {
   contactEmail: 'contact@zimsourcing.com',
   salesEmail: 'contact@zimsourcing.com',
   fallbackEmail: 'rayhanek202@gmail.com',
-  phone: '+880 1632 697791',
-  whatsapp: '+8801632697791',
+  phone: '+880 1819-453297',
+  whatsapp: '+8801819453297',
   address: {
-    street: 'Pallabi, Mirpur',
+    street: 'House 55, Road 12, Sector 14, Uttara',
     city: 'Dhaka',
-    postalCode: '1216',
+    postalCode: '1230',
     country: 'Bangladesh',
   },
   hours: 'Mon – Sat: 10:00 AM – 6:00 PM (GMT+6)',
@@ -28,7 +28,7 @@ export const COMPANY = {
 
 export const COMPANY_INFO = {
   ...COMPANY,
-  address: 'Pallabi, Mirpur, Dhaka 1216, Bangladesh',
+  address: 'House 55, Road 12, Sector 14, Uttara, Dhaka-1230, Bangladesh',
 };
 
 export const NAV_LINKS = [

@@ -194,7 +194,7 @@ export default function QuoteWizard() {
           </button>
           <a
             className="btn"
-            href={`https://wa.me/8801632697791?text=${encodeURIComponent(
+            href={`https://wa.me/8801819453297?text=${encodeURIComponent(
               `Hello ZIM Sourcing, I just submitted RFQ ${refNumber} for ${formData.category}.`
             )}`}
             target="_blank"

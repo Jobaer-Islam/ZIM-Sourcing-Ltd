@@ -86,8 +86,8 @@ export function generateQuoteEmailHtml(data: {
         </table>
       </div>
       <div class="footer">
-        ZIM Sourcing Ltd &bull; Pallabi, Mirpur, Dhaka 1216, Bangladesh<br>
-        Direct contact: contact@zimsourcing.com | info@zimsourcing.com
+        ZIM Sourcing Ltd &bull; House 55, Road 12, Sector 14, Uttara, Dhaka-1230, Bangladesh<br>
+        Phone / WhatsApp: +880 1819-453297 &bull; contact@zimsourcing.com | info@zimsourcing.com
       </div>
     </div>
   </body>

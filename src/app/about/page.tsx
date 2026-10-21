@@ -141,7 +141,8 @@ export default function Page() {
       <div className="card reveal">
         <span className="badge badge-accent">Head office</span>
         <h3 className="h4">Dhaka, Bangladesh</h3>
-        <p className="muted small">Pallabi, Mirpur, Dhaka 1216<br />Bangladesh</p>
+        <p className="muted small">House 55, Road 12, Sector 14, Uttara, Dhaka-1230<br />Bangladesh</p>
+        <p className="muted small">Phone / WhatsApp: <a href="https://wa.me/8801819453297" target="_blank" rel="noopener">+880 1819-453297</a></p>
         <p className="muted small">Merchandising, product development, sample room coordination, quality assurance and shipping. Monday&ndash;Saturday, 10 am&ndash;6 pm (GMT+6). Sunday by appointment.</p>
         <p className="small"><a className="link-arrow" href="mailto:info@zimsourcing.com">info@zimsourcing.com <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
       </div>

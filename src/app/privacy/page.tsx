@@ -20,7 +20,7 @@ export default function Page() {
   <div className="wrap wrap-narrow">
     <div className="prose">
       <h2>Who we are</h2>
-      <p>ZIM Sourcing Ltd is a private limited company registered in Bangladesh, with its head office at Pallabi, Mirpur, Dhaka 1216. For any privacy question, contact <a href="mailto:info@zimsourcing.com">info@zimsourcing.com</a>.</p>
+      <p>ZIM Sourcing Ltd is a private limited company registered in Bangladesh, with its head office at House 55, Road 12, Sector 14, Uttara, Dhaka-1230. For any privacy question, contact <a href="mailto:info@zimsourcing.com">info@zimsourcing.com</a>.</p>
       <h2>What we collect</h2>
       <ul>
         <li><strong>Enquiry data.</strong> The name, company, email, telephone number and order details you submit through our enquiry form or send us by email.</li>

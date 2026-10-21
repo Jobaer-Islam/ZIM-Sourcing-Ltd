@@ -41,16 +41,16 @@ export default function Page() {
           <svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span>
         </button>
       </div>
-      <a className="card card-hover contact-card" href="https://wa.me/8801632697791" target="_blank" rel="noopener">
+      <a className="card card-hover contact-card" href="https://wa.me/8801819453297" target="_blank" rel="noopener">
         <span className="card-icon"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
-        <h2 className="h4">WhatsApp</h2>
-        <p className="contact-value">Open a chat with the Dhaka office</p>
-        <span className="small muted">Useful for quick questions. Anything with files or specifications is better by email.</span>
+        <h2 className="h4">Phone &amp; WhatsApp</h2>
+        <p className="contact-value">+880 1819-453297</p>
+        <span className="small muted">Open a chat or call directly. Office: 01819453297 (Dhaka office).</span>
       </a>
       <div className="card contact-card">
         <span className="card-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
         <h2 className="h4">Head office</h2>
-        <p className="contact-value">Pallabi, Mirpur<br />Dhaka 1216, Bangladesh</p>
+        <p className="contact-value">House 55, Road 12, Sector 14<br />Uttara, Dhaka-1230, Bangladesh</p>
         <span className="small muted">Visits by appointment. <a href="/about#visiting">Planning a trip?</a></span>
       </div>
       <div className="card contact-card">

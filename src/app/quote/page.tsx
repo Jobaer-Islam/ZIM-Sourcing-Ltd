@@ -71,7 +71,7 @@ export default function Page() {
 
         <div className="card mt-3">
           <h3 className="h4">Prefer email?</h3>
-          <p className="muted small">Send your specification to <a className="link-arrow" style={{ display: 'inline' }} href="mailto:info@zimsourcing.com">info@zimsourcing.com</a> or <a className="link-arrow" style={{ display: 'inline' }} href="mailto:contact@zimsourcing.com">contact@zimsourcing.com</a>, or message us on <a className="link-arrow" style={{ display: 'inline' }} href="https://wa.me/8801632697791" target="_blank" rel="noopener">WhatsApp</a>.</p>
+          <p className="muted small">Send your specification to <a className="link-arrow" style={{ display: 'inline' }} href="mailto:info@zimsourcing.com">info@zimsourcing.com</a> or <a className="link-arrow" style={{ display: 'inline' }} href="mailto:contact@zimsourcing.com">contact@zimsourcing.com</a>, or message us on <a className="link-arrow" style={{ display: 'inline' }} href="https://wa.me/8801819453297" target="_blank" rel="noopener">WhatsApp</a>.</p>
         </div>
       </div>
 
