@@ -17,3 +17,9 @@ desktop.ini
 # Local Logs and Scratch
 *.log
 scratch/
+
+# Next.js and Node dependencies
+node_modules/
+.next/
+out/
+next-env.d.ts
