@@ -1,0 +1,10 @@
+{
+  "name": "ZIM Sourcing Ltd",
+  "short_name": "ZIM Sourcing",
+  "description": "Garments buying house in Dhaka, Bangladesh.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FCFCFD",
+  "theme_color": "#1E2A56",
+  "icons": [{ "src": "/assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
