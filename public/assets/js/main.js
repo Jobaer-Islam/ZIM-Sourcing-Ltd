@@ -11,8 +11,7 @@
   /* ---------------------------------------------------------------- theme */
   var STORE = 'zim-theme';
   function currentTheme() {
-    return root.getAttribute('data-theme') ||
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    return root.getAttribute('data-theme') || 'dark';
   }
   document.addEventListener('click', function (e) {
     if (!e.target.closest || !e.target.closest('.theme-toggle')) return;

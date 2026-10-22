@@ -11,8 +11,6 @@ import {
   ArrowUp,
   MessageCircle,
   ExternalLink,
-  Sun,
-  Moon,
   Clock,
   Send,
   FileCheck2,
@@ -24,7 +22,6 @@ export default function Footer() {
   const [dhakaTime, setDhakaTime] = useState<string>('--:--');
   const [isOpenOffice, setIsOpenOffice] = useState<boolean>(true);
   const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   useEffect(() => {
     // Clock update
@@ -57,22 +54,12 @@ export default function Footer() {
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Theme initialization
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    setTheme(currentTheme as 'light' | 'dark');
 
     return () => {
       clearInterval(interval);
       window.removeEventListener('scroll', onScroll);
     };
   }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('theme', nextTheme);
-  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -233,25 +220,6 @@ export default function Footer() {
             </p>
 
             <ul>
-              <li>
-                <button
-                  className="theme-link theme-toggle"
-                  type="button"
-                  onClick={toggleTheme}
-                  aria-label="Switch colour theme"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-                >
-                  {theme === 'dark' ? (
-                    <>
-                      <Sun className="w-4 h-4" /> Light Mode
-                    </>
-                  ) : (
-                    <>
-                      <Moon className="w-4 h-4" /> Dark Mode
-                    </>
-                  )}
-                </button>
-              </li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Use</Link></li>
               <li><Link href="/compliance#code">Code of Conduct</Link></li>

@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/css/fonts.css" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var r=document.documentElement;r.className+=' js';try{var t=localStorage.getItem('zim-theme');if(t==='dark'||t==='light')r.setAttribute('data-theme',t);}catch(e){}})();`,
+            __html: `(function(){var r=document.documentElement;r.className+=' js';try{var t=localStorage.getItem('zim-theme');if(t==='dark'||t==='light'){r.setAttribute('data-theme',t);}else{r.setAttribute('data-theme','dark');}}catch(e){r.setAttribute('data-theme','dark');}})();`,
           }}
         />
         <noscript>
@@ -151,6 +151,10 @@ export default function RootLayout({
 
     <div className="nav-actions">
       <a className="btn nav-cta" href="/quote" >Request a Quote</a>
+      <button className="icon-btn nav-theme-toggle theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg className="sun" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg className="moon" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
       <button className="icon-btn nav-toggle" type="button" aria-label="Open navigation menu" aria-controls="drawer" aria-expanded="false">
         <svg aria-hidden="true"><use href="#i-menu"/></svg>
       </button>
@@ -286,12 +290,6 @@ export default function RootLayout({
         <span>&copy; <span data-year>2026</span> ZIM Sourcing Ltd. All rights reserved. &middot; Member, BGBA &middot; Sourced and shipped from Bangladesh.</span>
       </p>
       <ul>
-        <li>
-          <button className="theme-link theme-toggle" type="button" aria-label="Switch colour theme">
-            <svg className="sun" aria-hidden="true"><use href="#i-moon"/></svg>
-            <svg className="moon" aria-hidden="true"><use href="#i-sun"/></svg>
-          </button>
-        </li>
         <li><a href="/privacy">Privacy Policy</a></li>
         <li><a href="/terms">Terms of Use</a></li>
         <li><a href="/compliance#code">Code of Conduct</a></li>

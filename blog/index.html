@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="../assets/css/fonts.css">
 
 <link rel="stylesheet" href="../assets/css/style.css?v=90872cee42">
-<script>(function(){var r=document.documentElement;r.className+=' js';try{var t=localStorage.getItem('zim-theme');if(t==='dark'||t==='light')r.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){var r=document.documentElement;r.className+=' js';try{var t=localStorage.getItem('zim-theme');if(t==='dark'||t==='light'){r.setAttribute('data-theme',t);}else{r.setAttribute('data-theme','dark');}}catch(e){r.setAttribute('data-theme','dark');}})();</script>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/#organization","name":"ZIM Sourcing Ltd","legalName":"ZIM Sourcing Ltd","alternateName":["ZIM Sourcing","ZIM","ZIM Sourcing Bangladesh","ZIM Sourcing Limited"],"description":"ZIM Sourcing Ltd is a garments buying house in Dhaka, Bangladesh providing apparel sourcing, product development, compliant factory allocation, quality assurance and shipment management for international brands and retailers.","url":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/","logo":{"@type":"ImageObject","url":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/assets/img/logo.png"},"image":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/assets/img/video-poster.jpg","email":"info@zimsourcing.com","telephone":"+880-1632-697791","foundingDate":"2015","knowsLanguage":["en","bn"],"address":{"@type":"PostalAddress","streetAddress":"Pallabi, Mirpur","addressLocality":"Dhaka","postalCode":"1216","addressRegion":"Dhaka Division","addressCountry":"BD"},"geo":{"@type":"GeoCoordinates","latitude":23.8223,"longitude":90.3654},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"18:00"}],"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Germany"},{"@type":"Country","name":"France"},{"@type":"Country","name":"Spain"},{"@type":"Country","name":"Italy"},{"@type":"Country","name":"Netherlands"},{"@type":"Country","name":"Canada"},{"@type":"Country","name":"Australia"},{"@type":"Country","name":"Japan"}],"contactPoint":[{"@type":"ContactPoint","telephone":"+880-1632-697791","email":"info@zimsourcing.com","contactType":"sales","areaServed":"Worldwide","availableLanguage":["English","Bengali"]},{"@type":"ContactPoint","email":"contact@zimsourcing.com","contactType":"customer support","areaServed":"Worldwide"}],"memberOf":[{"@type":"Organization","name":"Bangladesh Garment Buying House Association (BGBA)","alternateName":"BGBA","url":"https://www.bgba.org.bd/"}],"sameAs":["https://www.linkedin.com/company/zim-sourcing","https://www.facebook.com/zimsourcing"]},{"@type":"WebSite","@id":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/#website","url":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/","name":"ZIM Sourcing Ltd","publisher":{"@id":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/blog/index.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/blog/index.html"}]},{"@type":"CollectionPage","@id":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/blog/index.html#webpage","url":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/blog/index.html","name":"Apparel Sourcing Insights | ZIM Sourcing Ltd","description":"Apparel sourcing guidance from Bangladesh: frequently asked questions, tech packs, factory compliance and buyer due diligence, plus industry updates.","isPartOf":{"@id":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/#website"},"about":{"@id":"https://jobaer-islam.github.io/ZIM-Sourcing-Ltd/#organization"},"inLanguage":"en","dateModified":"2026-10-11"}]}</script>
 </head>
@@ -157,6 +157,10 @@
 
     <div class="nav-actions">
       <a class="btn nav-cta" href="../quote.html" >Request a Quote</a>
+      <button class="icon-btn nav-theme-toggle theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="sun" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="moon" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
       <button class="icon-btn nav-toggle" type="button" aria-label="Open navigation menu" aria-controls="drawer" aria-expanded="false">
         <svg aria-hidden="true"><use href="#i-menu"/></svg>
       </button>
@@ -350,12 +354,6 @@
         <span>&copy; <span data-year>2026</span> ZIM Sourcing Ltd. All rights reserved. &middot; Member, BGBA &middot; Sourced and shipped from Bangladesh.</span>
       </p>
       <ul>
-        <li>
-          <button class="theme-link theme-toggle" type="button" aria-label="Switch colour theme">
-            <svg class="sun" aria-hidden="true"><use href="#i-moon"/></svg>
-            <svg class="moon" aria-hidden="true"><use href="#i-sun"/></svg>
-          </button>
-        </li>
         <li><a href="../privacy.html">Privacy Policy</a></li>
         <li><a href="../terms.html">Terms of Use</a></li>
         <li><a href="../compliance.html#code">Code of Conduct</a></li>

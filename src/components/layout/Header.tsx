@@ -11,13 +11,13 @@ export const Header = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-    // Read theme preference
+    // Read theme preference (default to dark)
     const saved = localStorage.getItem("zim-theme") as "light" | "dark" | null;
-    const initial = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const initial = saved === "light" ? "light" : "dark";
     setTheme(initial);
     document.documentElement.setAttribute("data-theme", initial);
 
